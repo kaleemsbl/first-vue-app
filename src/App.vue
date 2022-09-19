@@ -1,77 +1,50 @@
 <template>
-  <div class="container text-align-center">
-
-    <div class="mt-10">
-      <h1>v-on directive</h1>
-    </div>
-
-    <div class="mt-10">
-      stop.prevent <a v-on:click.stop.prevent href="https://www.google.com">Click me</a>
-    </div>
-
-    <div class="mt-10">
-      <h2>form submit prevent default behavior (v-on:submit.prevent)</h2>
-      <form @submit.prevent="getData">
-        <div class="form-control">
-          <input type="text" name="firstName" placeholder="Enter First Name">
+  <div class="parent-center">
+    <div class="container">
+      <div class="row mb-3">
+        <div class="col">
+          <h2>Dynamic Components</h2>
         </div>
-        <div class="form-control">
-          <input type="text" name="lastName" placeholder="Enter Last Name">
-        </div>
-        <div class="form-control">
-          <input type="submit" value="Send" />
-        </div>
-      </form>
-    </div>
-
-    <div class="mt-10">
-      <h2>Key Modifiers</h2>
-      <div class="form-control">
-        <input @keyup.enter="commonFunction" type="text" placeholder="Enter First Name">
       </div>
-    </div>
 
-    <div class="mt-10">
-      <h2>v-once</h2>
-      <div class="form-control">
-        <p v-once>{{ tittle }}</p>
-        <br>
-        <button @click="changeTitle">Change Title</button>
+      <div class="row mb-5">
+        <div class="col-sm-3">
+          <button type="button" class="btn btn-primary" @click="changeComponent('PercentCalculate')">Calculate
+            %</button>
+        </div>
+        <div class="col-sm-3">
+          <button type="button" class="btn btn-success" @click="changeComponent('incrementDecrement')">Counter</button>
+        </div>
       </div>
+
+      <div class="row">
+        <div class="col">
+          <component :is="selectedComponent"></component>
+        </div>
+      </div>
+
+
     </div>
-
-
   </div>
 </template>
 
 <script>
-
-
+import PercentCalculate from './components/PercentCalculate.vue';
+import incrementDecrement from './components/IncDec.vue';
 export default {
   data() {
     return {
-      counter: 0,
-      tittle: "Hello"
+      selectedComponent: ""
     }
   },
   components: {
-    // define component here to be used in html
+    PercentCalculate,
+    incrementDecrement
   },
   methods: {
-    getData() {
-      alert("Submited");
-    },
-    commonFunction() {
-      alert("You have press enter button!")
-    },
-    changeTitle: function () {
-      this.tittle = "Kaleem: " + Math.random();;
+    changeComponent(changer) {
+      this.selectedComponent = changer;
     }
   }
-
 }
 </script>
-
-<style>
-
-</style>

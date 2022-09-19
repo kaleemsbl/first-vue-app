@@ -13,3 +13,10 @@ body {
 .form-control {
     margin-top: 10px;
 }
+.parent-center {
+    width: 40%;
+    margin: auto;
+    background: rgba(84, 84, 239, 0.079);
+    height: 100vh;
+    padding-top: 10px;
+}
