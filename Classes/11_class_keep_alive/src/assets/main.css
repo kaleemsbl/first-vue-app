@@ -1,0 +1,6 @@
+.custom-parent {
+  width: 50%;
+  margin: auto;
+  background-image: url("/images/body.png");
+  height: 100vh;
+}
