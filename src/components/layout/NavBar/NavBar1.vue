@@ -15,7 +15,23 @@
         </li>
 
       </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item float-right">
+          <a href="#" @click.prevent="changeLayout" class="nav-link">
+            <i class="fas fa-table fa-fw me-3"></i> Switch
+          </a>
+        </li>
+      </ul>
 
     </div>
   </nav>
 </template>
+<script>
+export default {
+  methods: {
+    changeLayout() {
+      this.$emit('change', true)
+    }
+  }
+}
+</script>
