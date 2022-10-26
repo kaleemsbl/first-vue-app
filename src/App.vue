@@ -4,7 +4,7 @@
 
 <script>
 import Layout1 from './components/layout/Layout1.vue';
-import Layout2 from './components/layout/Layout2.vue'
+import Layout2 from './components/layout/Layout2.vue';
 export default {
   data() {
     return {
