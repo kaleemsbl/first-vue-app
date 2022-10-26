@@ -13,7 +13,7 @@ export default {
   },
   created() {
     let lcV = localStorage.getItem('layout');
-    this.cpmName = lcV ? lcV : 'Layout1'
+    this.cpmName = lcV ? lcV : 'Layout1';
   },
   components: {
     Layout1,
