@@ -1,20 +1,16 @@
 <template>
-  <div>
+  <div class="container-fluid">
+
     <div class="row">
-      <div class="col">
-        <header class="navbar-header">
+      <div class="col-2">
+        <header>
           <nav-bar @change="change"></nav-bar>
         </header>
       </div>
-    </div>
 
-    <div class="container mt-5">
-
-      <div class="row">
-        <div class="col">
-          <div class="main">
-            <router-view></router-view>
-          </div>
+      <div class="col-10">
+        <div class="main">
+          <router-view></router-view>
         </div>
       </div>
 
@@ -24,7 +20,7 @@
 </template>
 
 <script>
-import NavBar from './NavBar/NavBar1.vue'
+import NavBar from './NavBar/NavBar2.vue'
 export default {
   components: {
     NavBar
